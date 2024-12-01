@@ -1,7 +1,9 @@
 import Data.List (sort)
+import System.Environment qualified as SE
 
 main = do
-  contents <- readFile "day_1.txt"
+  args <- SE.getArgs
+  contents <- readFile $ head args
   let records = parseRecords contents
   print $ partOne records
   print $ partTwo records
