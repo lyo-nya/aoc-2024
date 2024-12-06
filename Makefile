@@ -3,4 +3,4 @@ SRC_LOC=src/day_$(day).hs
 DATA_LOC=data/day_$(day).txt
 
 default:
-	ghc -outputdir=out -o $(BIN_LOC) $(SRC_LOC) && $(BIN_LOC) $(DATA_LOC)
+	ghc -threaded -outputdir=out -o $(BIN_LOC) $(SRC_LOC) && $(BIN_LOC)  $(DATA_LOC) +RTS -N10
